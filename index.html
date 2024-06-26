@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Hub</h1>
+        <div id="burger-menu" class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <nav id="nav" class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#forecast">Forecast</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <form id="weather-form">
+                <input type="text" id="city" name="city" placeholder="Enter city" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Subscribe to newsletter</label>
+                <button type="submit">Get Weather</button>
+            </form>
+            <input type="text" id="filter-input" placeholder="Filter by city name">
+        </section>
+
+        <section id="forecast" class="slider">
+            <div class="slide"> <!-- Slide 1 -->
+                <h2>Weather Forecast for Your city</h2>
+                <p>Temperature: 20°C</p>
+                <p>Condition: Sunny</p>
+            </div>
+            <div class="slide"> <!-- Slide 2 -->
+                <h2>Weather Forecast for Filtered city</h2>
+                <p>Temperature: 18°C</p>
+                <p>Condition: Cloudy</p>
+            </div>
+            <!-- Additional slides here -->
+        </section>
+
+        <section id="about" class="accordion">
+            <h2>About Weather Hub</h2>
+            <div class="accordion-item">
+                <h3>What we do</h3>
+                <div class="content">
+                    <p>We provide accurate weather forecasts...</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3>Our Mission</h3>
+                <div class="content">
+                    <p>To deliver reliable weather information...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav id="footer-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#forecast">Forecast</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Weather Hub</p>
+    </footer>
+
+    <div class="cookie-notification" id="cookie-notification">
+        <p>We use cookies to improve your experience. <button id="accept-cookies">Accept</button></p>
+    </div>
+    <!-- Absolitui path ar schirdeba radgan tu me davwer sxvebma ver gaushveben kods, Java xom ar aris rom ert comiled failshis gaushvas --> >
+    <!-- Include the external JS files -->
+    <script src="js/burger.js"></script>
+    <script src="js/weatherAPI.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/formValidation.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/filter.js"></script>
+    <script>
+        // Initialize all functionalities
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchWeatherData();
+            setupSlider();
+            validateForm();
+            initBurgerMenu();
+            handleCookies();
+            setupAccordion();
+            setupFilter();
+        });
+    </script>
+</body>
+</html>
